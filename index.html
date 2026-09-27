@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sade Lezzetler</title>
+<meta name="description" content="Sade Lezzetler - Menü, konum ve iletişim">
+<meta name="theme-color" content="#3F5A3D">
+<style>
+  :root{
+    --ink:#233420;
+    --paper:#F4F1E8;
+    --leaf:#3F5A3D;
+    --leaf-dark:#2C4028;
+    --clay:#B9673D;
+    --line:rgba(35,52,32,0.14);
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+    padding:48px 20px 32px;
+  }
+  .logo{
+    width:88px;
+    height:88px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--line);
+  }
+  h1{
+    margin:20px 0 4px;
+    font-size:1.9rem;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  .tag{
+    margin:0 0 40px;
+    font-size:0.95rem;
+    color:var(--leaf-dark);
+    font-style:italic;
+  }
+  nav{
+    width:100%;
+    max-width:360px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  a.btn{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 20px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    text-decoration:none;
+    color:var(--ink);
+    font-size:1.05rem;
+    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  a.btn:hover, a.btn:focus-visible{
+    transform:translateY(-1px);
+    box-shadow:0 4px 14px rgba(44,64,40,0.12);
+    background:#FAFAF5;
+  }
+  a.btn:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
+  a.btn .ic{ font-size:1.3rem; line-height:1; flex-shrink:0; }
+  a.btn .lbl{ font-weight:600; }
+  a.btn.primary{
+    background:var(--leaf);
+    border-color:var(--leaf);
+    color:#fff;
+  }
+  a.btn.primary:hover, a.btn.primary:focus-visible{ background:var(--leaf-dark); }
+
+  footer{
+    margin-top:auto;
+    padding-top:36px;
+    font-size:0.8rem;
+    color:var(--leaf-dark);
+    opacity:0.75;
+    text-align:center;
+  }
+  @media (prefers-reduced-motion: reduce){
+    a.btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+  <img class="logo" src="https://sadelezzetler.github.io/menu/logo.png" alt="Sade Lezzetler logosu">
+  <h1>Sade Lezzetler</h1>
+  <p class="tag">Doğal, sürdürülebilir, sağlıklı</p>
+
+  <nav>
+    <a class="btn primary" href="https://sadelezzetler.github.io/menu/">
+      <span class="ic">📋</span>
+      <span class="lbl">Menüyü Gör</span>
+    </a>
+
+    <!-- TODO: Google Maps linkini buraya ekle -->
+    <a class="btn" href="#">
+      <span class="ic">📍</span>
+      <span class="lbl">Konum</span>
+    </a>
+
+    <!-- TODO: wa.me/90XXXXXXXXXX şeklinde WhatsApp linkini ekle -->
+    <a class="btn" href="#">
+      <span class="ic">📞</span>
+      <span class="lbl">Bize Ulaşın</span>
+    </a>
+
+    <!-- TODO: instagram.com/kullaniciadi linkini ekle -->
+    <a class="btn" href="#">
+      <span class="ic">📸</span>
+      <span class="lbl">Instagram</span>
+    </a>
+
+    <!-- TODO: sipariş platformu linkini ekle -->
+    <a class="btn" href="#">
+      <span class="ic">🛵</span>
+      <span class="lbl">Sipariş Ver</span>
+    </a>
+  </nav>
+
+  <footer>© 2026 Sade Lezzetler</footer>
+
+</body>
+</html>
