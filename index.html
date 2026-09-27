@@ -5,134 +5,188 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sade Lezzetler</title>
 <meta name="description" content="Sade Lezzetler - Menü, konum ve iletişim">
-<meta name="theme-color" content="#3F5A3D">
+<meta name="theme-color" content="#445C36">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#233420;
-    --paper:#F4F1E8;
-    --leaf:#3F5A3D;
-    --leaf-dark:#2C4028;
-    --clay:#B9673D;
-    --line:rgba(35,52,32,0.14);
+    --moss:#445C36;
+    --moss-deep:#26311F;
+    --oat:#EDE6D2;
+    --oat-soft:#F5F1E4;
+    --mustard:#C4872B;
+    --line:rgba(38,49,31,0.16);
   }
   *{box-sizing:border-box;}
   html,body{height:100%;}
   body{
     margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    background:var(--oat);
+    color:var(--moss-deep);
+    font-family:"Work Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+    padding:56px 20px 28px;
+  }
+  .page{
+    width:100%;
+    max-width:400px;
     display:flex;
     flex-direction:column;
     align-items:center;
-    min-height:100vh;
-    padding:48px 20px 32px;
+    text-align:center;
+    animation:rise 0.6s ease-out both;
   }
+  @keyframes rise{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
   .logo{
-    width:88px;
-    height:88px;
+    width:80px;
+    height:80px;
     border-radius:50%;
     object-fit:cover;
-    box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--line);
+    box-shadow:0 0 0 3px var(--oat), 0 0 0 4px var(--line);
   }
   h1{
-    margin:20px 0 4px;
-    font-size:1.9rem;
+    font-family:"Fraunces",Georgia,serif;
+    font-optical-sizing:auto;
     font-weight:600;
-    letter-spacing:0.01em;
+    font-size:2.1rem;
+    margin:22px 0 6px;
+    color:var(--moss-deep);
   }
-  .tag{
-    margin:0 0 40px;
-    font-size:0.95rem;
-    color:var(--leaf-dark);
+  .tagline{
+    font-family:"Fraunces",Georgia,serif;
     font-style:italic;
+    font-weight:500;
+    font-size:1.02rem;
+    color:var(--moss);
+    margin:0 0 44px;
   }
-  nav{
+
+  .primary-action{
     width:100%;
-    max-width:360px;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-  }
-  a.btn{
     display:flex;
     align-items:center;
-    gap:14px;
-    padding:16px 20px;
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:10px;
+    justify-content:center;
+    gap:12px;
+    padding:19px 24px;
+    background:var(--moss);
+    color:var(--oat-soft);
     text-decoration:none;
-    color:var(--ink);
-    font-size:1.05rem;
-    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    border-radius:8px;
+    font-size:1.12rem;
+    font-weight:600;
+    letter-spacing:0.01em;
+    transition:background 0.15s ease, transform 0.15s ease;
   }
-  a.btn:hover, a.btn:focus-visible{
+  .primary-action:hover, .primary-action:focus-visible{
+    background:var(--moss-deep);
     transform:translateY(-1px);
-    box-shadow:0 4px 14px rgba(44,64,40,0.12);
-    background:#FAFAF5;
   }
-  a.btn:focus-visible{ outline:2px solid var(--leaf); outline-offset:2px; }
-  a.btn .ic{ font-size:1.3rem; line-height:1; flex-shrink:0; }
-  a.btn .lbl{ font-weight:600; }
-  a.btn.primary{
-    background:var(--leaf);
-    border-color:var(--leaf);
-    color:#fff;
-  }
-  a.btn.primary:hover, a.btn.primary:focus-visible{ background:var(--leaf-dark); }
+  .primary-action:focus-visible{ outline:2px solid var(--mustard); outline-offset:3px; }
+  .primary-action .ic{ font-size:1.25rem; }
 
-  footer{
-    margin-top:auto;
-    padding-top:36px;
-    font-size:0.8rem;
-    color:var(--leaf-dark);
-    opacity:0.75;
-    text-align:center;
+  .secondary-row{
+    display:flex;
+    gap:12px;
+    width:100%;
+    margin-top:14px;
   }
+  .secondary-action{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:14px 16px;
+    background:transparent;
+    border:1.5px solid var(--line);
+    color:var(--moss-deep);
+    text-decoration:none;
+    border-radius:8px;
+    font-size:0.96rem;
+    font-weight:500;
+    transition:border-color 0.15s ease, background 0.15s ease;
+  }
+  .secondary-action:hover, .secondary-action:focus-visible{
+    border-color:var(--moss);
+    background:rgba(68,92,54,0.06);
+  }
+  .secondary-action:focus-visible{ outline:2px solid var(--mustard); outline-offset:2px; }
+
+  .divider{
+    width:100%;
+    max-width:220px;
+    border:none;
+    border-top:1px solid var(--line);
+    margin:48px 0 26px;
+  }
+
+  .contact{
+    font-size:0.92rem;
+    line-height:1.9;
+    color:var(--moss-deep);
+    opacity:0.85;
+  }
+  .signature{
+    margin-top:22px;
+    font-size:0.88rem;
+    color:var(--moss);
+  }
+  .copyright{
+    margin-top:18px;
+    font-size:0.76rem;
+    color:var(--moss-deep);
+    opacity:0.5;
+  }
+
   @media (prefers-reduced-motion: reduce){
-    a.btn{ transition:none; }
+    .page{ animation:none; }
+    .primary-action, .secondary-action{ transition:none; }
   }
 </style>
 </head>
 <body>
 
-  <img class="logo" src="https://sadelezzetler.github.io/menu/logo.png" alt="Sade Lezzetler logosu">
-  <h1>Sade Lezzetler</h1>
-  <p class="tag">Doğal, sürdürülebilir, sağlıklı</p>
+  <div class="page">
+    <img class="logo" src="https://sadelezzetler.github.io/menu/logo.png" alt="Sade Lezzetler logosu">
+    <h1>Sade Lezzetler</h1>
+    <p class="tagline">az malzeme, çok lezzet</p>
 
-  <nav>
-    <a class="btn primary" href="https://sadelezzetler.github.io/menu/">
+    <a class="primary-action" href="https://sadelezzetler.github.io/menu/">
       <span class="ic">📋</span>
-      <span class="lbl">Menüyü Gör</span>
+      <span>Menüyü Gör</span>
     </a>
 
-    <!-- TODO: Google Maps linkini buraya ekle -->
-    <a class="btn" href="#">
-      <span class="ic">📍</span>
-      <span class="lbl">Konum</span>
-    </a>
+    <div class="secondary-row">
+      <!-- TODO: Google Maps linkini buraya ekle -->
+      <a class="secondary-action" href="#">
+        <span>📍</span>
+        <span>Konum</span>
+      </a>
+      <!-- TODO: instagram.com/kullaniciadi linkini ekle -->
+      <a class="secondary-action" href="#">
+        <span>📸</span>
+        <span>Instagram</span>
+      </a>
+    </div>
 
-    <!-- TODO: wa.me/90XXXXXXXXXX şeklinde WhatsApp linkini ekle -->
-    <a class="btn" href="#">
-      <span class="ic">📞</span>
-      <span class="lbl">Bize Ulaşın</span>
-    </a>
+    <hr class="divider">
 
-    <!-- TODO: instagram.com/kullaniciadi linkini ekle -->
-    <a class="btn" href="#">
-      <span class="ic">📸</span>
-      <span class="lbl">Instagram</span>
-    </a>
+    <!-- TODO: telefon ve adres bilgilerini buraya yaz -->
+    <div class="contact">
+      📞 Telefon buraya<br>
+      📍 Adres buraya
+    </div>
 
-    <!-- TODO: sipariş platformu linkini ekle -->
-    <a class="btn" href="#">
-      <span class="ic">🛵</span>
-      <span class="lbl">Sipariş Ver</span>
-    </a>
-  </nav>
-
-  <footer>© 2026 Sade Lezzetler</footer>
+    <p class="signature">🌱 Doğal • ♻️ Sürdürülebilir • 💚 Sağlıklı</p>
+    <p class="copyright">© 2026 Sade Lezzetler</p>
+  </div>
 
 </body>
 </html>
